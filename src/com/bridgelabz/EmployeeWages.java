@@ -23,13 +23,27 @@ public class EmployeeWages {
         if(empPresent == IS_FULL_TIME){
             System.out.println("Employee is Full Time");
             empWage = WAGE_PRE_HOUR * FULL_DAY_HOURS;
-        } else if (empPresent == PART_TIME_HOUR) {
+        }
+        else if (empPresent == IS_PART_TIME) {
             System.out.println("Employee is Part Time");
             empWage = WAGE_PRE_HOUR * PART_TIME_HOUR;
             
         } else {
             System.out.println("Employee is Absent");
         }
+        switch(empPresent){
+            case IS_FULL_TIME:
+                System.out.println("Employee is Full Time");
+                empWage = WAGE_PRE_HOUR * FULL_DAY_HOURS;
+                break;
+            case IS_PART_TIME:
+                System.out.println("Employee is Part Time");
+                empWage = WAGE_PRE_HOUR * PART_TIME_HOUR;
+                break;
+            default:
+                System.out.println("Employee is Absent");
+        }
+
         System.out.println("EmployeeWage = " + empWage);
     }
 }
