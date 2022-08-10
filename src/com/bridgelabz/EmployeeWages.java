@@ -3,21 +3,15 @@ package com.bridgelabz;
 public class EmployeeWages {
 
     static final int WAGE_PRE_HOUR = 20;
-
     static final int FULL_DAY_HOURS = 8;
-
     static final int PART_TIME_HOUR = 4;
-
     static final int IS_FULL_TIME = 2;
-
     static final int IS_PART_TIME = 1;
-
     static final int WORKING_DAYS_PER_MONTH = 20;
-
     static final int TOTAL_WORKING_HOURS = 100;
 
 
-    public static void main(String[] args) {
+    static void calculateWages(){
 
         System.out.println("Welcome to Employee Wage Computation Program on Main Branch");
         int dayCount = 1;
@@ -59,4 +53,8 @@ public class EmployeeWages {
         System.out.println("Total Wage = " +totalWage);
         System.out.println("Total Working Hours = "+workingHours);
     }
+    public static void main(String[] args){
+        calculateWages();
+    }
+
 }
