@@ -10,6 +10,18 @@ public class EmployeeWages {
     static final int WORKING_DAYS_PER_MONTH = 20;
     static final int TOTAL_WORKING_HOURS = 100;
 
+    private final String COMPANY;
+    private final int WAGE_PER_HOUR;
+    private final int WORK_DAYS_PER_MONTH;
+    private final int TOTAL_WORK_HOURS;
+
+    EmployeeWages(String COMPANY, int WAGE_PER_HOUR, int WORKING_DAYS_PER_MONTH, int TOTAL_WORKING_HOURS){
+        this.COMPANY = COMPANY;
+        this.WAGE_PER_HOUR = WAGE_PER_HOUR;
+        this.WORK_DAYS_PER_MONTH = WORKING_DAYS_PER_MONTH;
+        this.TOTAL_WORK_HOURS = TOTAL_WORKING_HOURS;
+    }
+
 
     static void calculateWages(){
 
@@ -31,20 +43,7 @@ public class EmployeeWages {
             } else {
                 System.out.println("Employee is Absent");
             }
-            switch (empPresent) {
-                case IS_FULL_TIME:
-                    System.out.println("Employee is Full Time");
-                    empWage = WAGE_PRE_HOUR * FULL_DAY_HOURS;
-                    workingHours += FULL_DAY_HOURS;
-                    break;
-                case IS_PART_TIME:
-                    System.out.println("Employee is Part Time");
-                    empWage = WAGE_PRE_HOUR * PART_TIME_HOUR;
-                    workingHours += FULL_DAY_HOURS;
-                    break;
-                default:
-                    System.out.println("Employee is Absent");
-            }
+
             totalWage+=empWage;
 
             System.out.println("EmployeeWage for Day # " + dayCount + " => " +empWage);
@@ -54,7 +53,11 @@ public class EmployeeWages {
         System.out.println("Total Working Hours = "+workingHours);
     }
     public static void main(String[] args){
-        calculateWages();
+        EmployeeWages vmart = new EmployeeWages("vmart", 20,40,200);
+        vmart.calculateWages();
+
+        EmployeeWages bigbazaar = new EmployeeWages("bigbazaar",20, 50, 160);
+        bigbazaar.calculateWages();
     }
 
 }
